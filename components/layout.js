@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Header from './header'
 import Footer from './footer'
 
 function Layout({ children }) {
@@ -8,8 +7,7 @@ function Layout({ children }) {
       <Head>
         <meta name="og:title" content="Jeremy Puchta Personal Website" />
       </Head>
-      <Header />
-      <main>{children}</main>
+      <main className="min-h-screen pt-20 px-8">{children}</main>
       <Footer />
     </div>
   )
