@@ -1,32 +1,10 @@
-import { useEffect, useState } from "react";
+import { getAllPosts } from "../lib/api"
 import Head from "next/head";
-import { createClient } from "contentful"
+import Link from "next/link";
 
 import Layout from "../components/layout";
 
-
-const client = createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
-})
-
-export default function IndexPage() {
-  async function fetchEntries() {
-    const entries = await client.getEntries()
-    if (entries.items) return entries.items
-    console.log(`Error getting Entries for ${contentType.name}.`)
-  }
-
-  const [posts, setPosts] = useState([])
-
-  useEffect(() => {
-    async function getPosts() {
-      const allPosts = await fetchEntries()
-      setPosts([...allPosts])
-    }
-    getPosts()
-  }, [])
-
+export default function IndexPage({ posts }) {
   return (
     <Layout>
       <Head>
@@ -39,17 +17,21 @@ export default function IndexPage() {
       </section>
       <section>
         <h2 className="text-2xl font-bold">Articles</h2>
-        {posts.length > 0 ? posts.map(post => (
-          <Post
-            alt={p.fields.alt}
-            date={p.fields.date}
-            key={p.fields.title}
-            image={p.fields.image}
-            title={p.fields.title}
-            url={p.fields.url}
-          />
+        {posts.length > 0 ? posts.map(p => (
+          <Link href="/posts/[id]" as={`/posts/${p.slug}`}>
+            <a>
+              <h2>{p.title}</h2>
+            </a>
+          </Link>
         )) : null}
       </section>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const posts = await getAllPosts()
+  return {
+    props: { posts },
+  }
 }
