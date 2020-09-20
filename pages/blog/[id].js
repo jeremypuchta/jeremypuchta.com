@@ -2,11 +2,10 @@ import { getAllPostIds, getPostData } from "../../lib/api";
 import Layout from "../../components/layout";
 
 export default function Post({ post }) {
-  console.log(post)
   return (
     <Layout>
       <article>
-        <h2>{post.title}</h2>
+        <h2 className="text-xl">{post.title}</h2>
         <p>{post.date}</p>
       </article>
     </Layout>
@@ -16,7 +15,7 @@ export default function Post({ post }) {
 export async function getStaticPaths() {
   const paths = await getAllPostIds()
   return {
-    paths: paths?.map(({ slug }) => `/posts/${slug}`) ?? [],
+    paths: paths?.map(({ slug }) => `/blog/${slug}`) ?? [],
     fallback: true
   }
 }

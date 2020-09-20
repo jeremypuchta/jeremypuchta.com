@@ -3,3 +3,26 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer base {
+  ::selection {
+    background: #d5ffd3;
+  }
+
+  ::-moz-selection {
+    background: #d5ffd3;
+  }
+
+  a {
+    @apply font-bold;
+    background: linear-gradient(transparent 70%, #b9cdff 0);
+  }
+
+  a:hover {
+    background: linear-gradient(transparent 70%, #95b6fc 0);
+  }
+
+  .social a {
+    background: none;
+  }
+}

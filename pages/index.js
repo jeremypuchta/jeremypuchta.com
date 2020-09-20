@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 import Layout from "../components/layout";
+import Post from "../components/post";
 
 export default function IndexPage({ posts }) {
   return (
@@ -22,11 +23,12 @@ export default function IndexPage({ posts }) {
       <section>
         <h2 className="text-2xl font-bold">Articles</h2>
         {posts.length > 0 ? posts.map(p => (
-          <Link href="/posts/[id]" as={`/posts/${p.slug}`}>
-            <a>
-              <h2>{p.title}</h2>
-            </a>
-          </Link>
+          <Post
+            key={p.title}
+            date={p.date}
+            slug={p.slug}
+            title={p.title}
+          />
         )) : null}
       </section>
     </Layout>
