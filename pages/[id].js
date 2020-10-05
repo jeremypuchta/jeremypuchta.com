@@ -1,9 +1,8 @@
-import { getAllPostIds, getPostData } from "../lib/api";
 import Layout from "../components/layout";
 import ReactMarkdown from "react-markdown";
 import moment from "moment";
 
-export default function Post({ post }) {
+export default function Post() {
   return (
     <Layout>
       <article>
@@ -17,21 +16,4 @@ export default function Post({ post }) {
       </article>
     </Layout>
   )
-}
-
-export async function getStaticPaths() {
-  const paths = await getAllPostIds()
-  return {
-    paths: paths?.map(({ slug }) => `/${slug}`) ?? [],
-    fallback: true
-  }
-}
-
-export async function getStaticProps({ params }) {
-  const data = await getPostData(params.id)
-  return {
-    props: {
-      post: data.post
-    }
-  }
 }
