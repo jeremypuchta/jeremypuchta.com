@@ -1,7 +1,7 @@
 import Link from "next/link";
 import moment from "moment";
 
-export default function Post({ date, slug, title }) {
+export default function Post({ title, date, slug }) {
   return (
     <div className="border-b sm:border-none border-gray-300">
       <Link href="/[id]" as={`/${slug}`}>

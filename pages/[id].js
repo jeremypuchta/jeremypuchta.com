@@ -1,11 +1,46 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import renderToString from "next-mdx-remote/render-to-string";
+import hydrate from "next-mdx-remote/hydrate";
+import moment from "moment";
+
 import Layout from "../components/layout";
 
-export default function Post() {
+const root = process.cwd()
+
+export default function Post({ mdxSource, frontMatter }) {
+  const content = hydrate(mdxSource)
   return (
     <Layout>
       <article>
-        <p>This is a post</p>
+        <header>
+          <h1 className="text-4xl font-extrabold sm:text-5xl">{frontMatter.title}</h1>
+          <time className="text-gray-700 text-sm">{moment(frontMatter.publishedAt).format("Do MMMM YYYY")}</time>
+        </header>
+        <main className="markdown">
+          {content}
+        </main>
       </article>
     </Layout>
   )
+}
+
+export async function getStaticPaths() {
+  return {
+    fallback: false,
+    paths: fs
+      .readdirSync(path.join(root, 'content'))
+      .map((p) => ({ params: { id: p.replace(/\.mdx/, '') } })),
+  }
+}
+
+export async function getStaticProps({ params }) {
+  const source = fs.readFileSync(
+    path.join(root, 'content', `${params.id}.mdx`),
+    'utf8'
+  )
+  const { data, content } = matter(source)
+  const mdxSource = await renderToString(content)
+  return { props: { mdxSource, frontMatter: data } }
 }
