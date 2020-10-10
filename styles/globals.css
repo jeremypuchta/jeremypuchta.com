@@ -12,9 +12,12 @@
     line-height: 1.25;
   }
 
-  h2 {
-    @apply text-3xl;
-    @apply font-bold;
+  a {
+    color: #0163E1;
+  }
+
+  a:hover {
+    @apply underline;
   }
 
   .markdown {

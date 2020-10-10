@@ -23,7 +23,7 @@ export default function IndexPage({ postData }) {
         </p>
       </section>
       <section className="my-4">
-        <h2 className="mb-4">Articles</h2>
+        <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Articles</h2>
         {postData.map((post) => (
           <Post
             title={post.frontMatter.title}
