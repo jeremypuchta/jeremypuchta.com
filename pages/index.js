@@ -26,6 +26,7 @@ export default function IndexPage({ postData }) {
         <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Articles</h2>
         {postData.map((post) => (
           <Post
+            key={post.frontMatter.title}
             title={post.frontMatter.title}
             date={post.frontMatter.publishedAt}
             slug={post.slug}
