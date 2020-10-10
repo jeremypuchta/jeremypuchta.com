@@ -1,15 +1,16 @@
 import Link from "next/link";
 import moment from "moment";
 
-export default function Post({ title, date, slug }) {
+export default function Post({ title, date, slug, summary }) {
   return (
-    <div className="border-b sm:border-none border-gray-300">
+    <div className="mb-8">
       <Link href="/[id]" as={`/${slug}`}>
         <a>
-          <div className="p-3 my-2 rounded -mx-3 sm:hover:bg-gray-100">
-            <time className="text-xs font-normal text-gray-600">{moment(date).format('MMMM DD, YYYY')}</time>
-            <h3 className="text-xl font-semibold text-black">{title}</h3>
+          <div className="mb-2">
+            <h3 className="text-lg font-semibold leading-slight">{title}</h3>
+            <time className="text-sm text-gray-700">{moment(date).format('MMMM DD, YYYY')}</time>
           </div>
+          <p className="">{summary}</p>
         </a>
       </Link>
     </div>
