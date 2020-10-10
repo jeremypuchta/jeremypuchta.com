@@ -12,6 +12,11 @@
     line-height: 1.25;
   }
 
+  h2 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+
   .markdown {
     @apply leading-normal break-words;
   }
