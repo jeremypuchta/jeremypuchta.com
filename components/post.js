@@ -3,7 +3,7 @@ import moment from "moment";
 
 export default function Post({ title, date, slug, summary }) {
   return (
-    <div className="mb-8">
+    <div className="p-4 -mx-4 mb-4 border-solid border border-gray-200 rounded shadow-none duration-75 transition-all ease-in hover:shadow-xl hover:border-transparent">
       <Link href="/[id]" as={`/${slug}`}>
         <a className="hover:no-underline">
           <div className="mb-2">
