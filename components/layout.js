@@ -23,7 +23,7 @@ function Layout({ children }) {
         </script>
       </Head>
       <Header />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen mb-8">{children}</main>
       <Footer />
     </div>
   )

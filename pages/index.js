@@ -15,7 +15,7 @@ export default function IndexPage({ postData }) {
         <title>Jeremy Puchta</title>
       </Head>
       <section>
-        <h1 className="text-4xl font-bold mb-2 sm:text-5xl">Hey, I'm Jerry!</h1>
+        <h1 className="text-4xl font-bold mt-0 mb-2 sm:text-5xl">Hey, I'm Jerry!</h1>
         <p className="leading-slight text-gray-800 sm:text-lg">
           I'm a software engineer in love with learning new things.
           On this website I share my latest work and thoughts about various subjects.
