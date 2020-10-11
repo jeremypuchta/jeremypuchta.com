@@ -31,7 +31,7 @@ export default function Footer() {
       </div>
       <Link href="/legal">
         <a>
-          <p className="text-sm">Privacy & Terms</p>
+          <p className="text-sm mb-0">Privacy & Terms</p>
         </a>
       </Link>
     </footer>
