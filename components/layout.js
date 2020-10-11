@@ -7,7 +7,7 @@ function Layout({ children }) {
     <div className="container max-w-screen-md mx-auto pt-12 px-8">
       <Head>
         <meta name="og:title" content="Jeremy Puchta Personal Website" />
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+        {/* Global site tag (gtag.js) - Google Analytics */}
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}/>
         <script dangerouslySetInnerHTML={{
           __html: `
