@@ -93,7 +93,13 @@
     @apply leading-tight text-sm font-semibold text-gray-600 mb-4 mt-6;
   }
 
+  .markdown img {
+    @apply mx-auto;
+  }
 
+  .markdown figcaption {
+    @apply text-center text-sm text-gray-700;
+  }
 
   .markdown blockquote {
     @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
