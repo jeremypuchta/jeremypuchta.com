@@ -5,7 +5,7 @@ export default function Header() {
     <header className="pb-8">
       <Link href="/">
         <a className="hover:no-underline">
-          <h1 className="text-3xl font-extrabold text-black">Jeremy Puchta</h1>
+          <h1 className="text-3xl font-extrabold text-black m-0">Jeremy Puchta</h1>
         </a>
       </Link>
     </header>

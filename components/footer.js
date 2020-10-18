@@ -1,9 +1,11 @@
+import Link from 'next/link';
 import { FaTwitter, FaGoodreadsG, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="border-solid border-t-2 border-gray-200 py-4 items-center text-center sm:text-left sm:flex sm:flex-row-reverse sm:justify-between">
-      <div className="text-xl pb-4 sm:pb-0 social">
+    <footer className="border-solid border-t-2 border-gray-200 py-4 items-center text-center sm:text-left sm:flex sm:flex-row sm:justify-between">
+      <p className="text-sm text-gray-700 items-center mb-4 sm:mb-0">© 2020 Jeremy Puchta.</p>
+      <div className="text-xl mb-4 sm:mb-0 social">
         <ul className="flex flex-row justify-center">
           <a href="https://twitter.com/jeremypuchta" target="_blank">
             <li className="pr-3 text-gray-700 hover:text-black">
@@ -27,7 +29,11 @@ export default function Footer() {
           </a>
         </ul>
       </div>
-      <p className="text-sm text-gray-700 items-center">© 2020 Jeremy Puchta.</p>
+      <Link href="/legal">
+        <a>
+          <p className="text-sm mb-0">Privacy & Terms</p>
+        </a>
+      </Link>
     </footer>
   )
 }

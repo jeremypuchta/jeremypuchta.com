@@ -17,7 +17,7 @@ export default function Post({ mdxSource, frontMatter }) {
     <Layout>
       <article>
         <header className="mb-8">
-          <h1 className="text-4xl font-extrabold sm:text-5xl leading-slight">{frontMatter.title}</h1>
+          <h1 className="text-4xl m-0 font-extrabold sm:text-5xl leading-slight">{frontMatter.title}</h1>
           <time className="text-gray-700 text-sm">{moment(frontMatter.publishedAt).format("Do MMMM YYYY")}</time>
         </header>
         <main className="markdown">

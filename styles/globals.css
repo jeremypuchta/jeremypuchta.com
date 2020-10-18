@@ -20,6 +20,27 @@
     @apply underline;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    @apply my-4;
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
   .markdown {
     @apply leading-normal break-words;
   }
@@ -53,7 +74,7 @@
   }
 
   .markdown h2 {
-    @apply leading-tight text-2xl font-bold mb-4 mt-6 pb-2;
+    @apply leading-tight text-2xl font-bold;
   }
 
   .markdown h3 {
@@ -72,8 +93,12 @@
     @apply leading-tight text-sm font-semibold text-gray-600 mb-4 mt-6;
   }
 
-  .markdown p {
-    @apply mb-6;
+  .markdown img {
+    @apply mx-auto;
+  }
+
+  .markdown figcaption {
+    @apply text-center text-sm text-gray-700;
   }
 
   .markdown blockquote {
