@@ -7,13 +7,13 @@ const SEO = {
   canonical: 'https://jeremypuchta.com',
   openGraph: {
     type: 'website',
-    locale: 'en_GB',
+    locale: 'en_IE',
     url: 'https://www.jeremypuchta.com',
     title,
     description,
     images: [
       {
-        url: 'https://www.jeremypuchta.com/static/images/adrien-olichon-RCAhiGJsUUE-unsplash.jpg',
+        url: 'https://www.jeremypuchta.com/images/adrien-olichon-RCAhiGJsUUE-unsplash.jpg',
         alt: title,
         width: 1280,
         height: 720
