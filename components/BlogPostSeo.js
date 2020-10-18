@@ -8,6 +8,8 @@ const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
     alt: title
   };
 
+  console.log(featuredImage)
+
   return (
     <>
       <NextSeo
