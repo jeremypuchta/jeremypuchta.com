@@ -1,5 +1,5 @@
 const title = 'Jeremy Puchta'
-const description = 'Software Engineering, and more.'
+const description = 'Online Basecamp of Jeremy Puchta'
 
 const SEO = {
   title,
