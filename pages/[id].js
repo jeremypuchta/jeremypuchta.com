@@ -7,14 +7,15 @@ import moment from "moment";
 import mdxPrism from "mdx-prism";
 
 import Layout from "../components/layout";
+import BlogSeo from "../components/BlogPostSeo";
 
 const root = process.cwd()
 
-export default function Post({ mdxSource, frontMatter }) {
+export default function Post({ slug, mdxSource, frontMatter }) {
   const content = hydrate(mdxSource)
-
   return (
     <Layout>
+      <BlogSeo url={`https://www.jeremypuchta.com/${slug}`} {...frontMatter} />
       <article>
         <header className="mb-8">
           <h1 className="text-4xl m-0 font-extrabold sm:text-5xl leading-slight">{frontMatter.title}</h1>
@@ -48,5 +49,5 @@ export async function getStaticProps({ params }) {
       rehypePlugins: [mdxPrism]
     }
   })
-  return { props: { mdxSource, frontMatter: data } }
+  return { props: { slug: params.id, mdxSource, frontMatter: data } }
 }
