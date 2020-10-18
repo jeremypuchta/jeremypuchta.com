@@ -13,7 +13,7 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://leerob.io/static/images/adrien-olichon-RCAhiGJsUUE-unsplash.jpg',
+        url: 'https://www.jeremypuchta.com/static/images/adrien-olichon-RCAhiGJsUUE-unsplash.jpg',
         alt: title,
         width: 1280,
         height: 720
