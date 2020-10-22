@@ -4,7 +4,7 @@ import Header from "./header";
 
 function Layout({ children }) {
   return (
-    <div className="container max-w-screen-md mx-auto pt-12 px-8">
+    <div className="container max-w-screen-lg mx-auto pt-12 px-8">
       <Head>
         <meta name="og:title" content="Jeremy Puchta" />
         {/* Global site tag (gtag.js) - Google Analytics */}
@@ -23,7 +23,7 @@ function Layout({ children }) {
         </script>
       </Head>
       <Header />
-      <main className="min-h-screen mb-8">{children}</main>
+      <main className="mx-auto max-w-screen-md min-h-screen mb-8">{children}</main>
       <Footer />
     </div>
   )

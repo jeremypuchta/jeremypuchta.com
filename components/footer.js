@@ -3,7 +3,7 @@ import { FaTwitter, FaGoodreadsG, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="border-solid border-t-2 border-gray-200 py-4 items-center text-center sm:text-left sm:flex sm:flex-row sm:justify-between">
+    <footer className="max-w-screen-md mx-auto border-solid border-t-2 border-gray-200 py-4 items-center text-center sm:text-left sm:flex sm:flex-row sm:justify-between">
       <p className="text-sm text-gray-700 items-center mb-4 sm:mb-0">© 2020 Jeremy Puchta.</p>
       <div className="text-xl mb-4 sm:mb-0 social">
         <ul className="flex flex-row justify-center">

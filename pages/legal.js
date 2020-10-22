@@ -11,10 +11,7 @@ export default function LegalPage() {
       <p>I. Information about us as controllers of your data<br/>II. The rights of users and data subjects<br/>III. Information about the data processing</p>
       <h3>I. Information about us as controllers of your data</h3>
       <p>The party responsible for this website (the "controller") for purposes of data protection law is:</p>
-      <p>Sample company/entrepreneur<br/>Any street 1<br/>12345 Anytown<br/>Germany</p>
-      <p>Telephone: Telephone number<br/>Fax: Fax number<br/>Email: muster@mustermail.xy</p>
-      <p>The controller's data protection officer is:</p>
-      <p>Maxie Musterfrau&nbsp;</p>
+      <p>Jeremy Puchta<br/>Brandvorwerkstraße 55<br/>04275 Leipzig<br/>Germany</p><p>Email: jeremypuchta@outlook.com</p>
 
       <h3>II. The rights of users and data subjects</h3>
       <p>With regard to the data processing to be described in more detail below, users and data subjects have the right</p>
