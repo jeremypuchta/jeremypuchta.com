@@ -1,12 +1,9 @@
-import fs from "fs";
-import path from "path";
 import Head from "next/head";
-import matter from "gray-matter";
 
 import Layout from "../components/layout";
 import Post from "../components/post";
 
-const root = process.cwd()
+import { getSortedPostsData } from '../lib/posts'
 
 export default function IndexPage({ postData }) {
   return (
@@ -28,11 +25,11 @@ export default function IndexPage({ postData }) {
         <h2 className="mb-4 text-2xl font-bold sm:text-3xl">Articles</h2>
         {postData.map((post) => (
           <Post
-            key={post.frontMatter.title}
-            title={post.frontMatter.title}
-            date={post.frontMatter.publishedAt}
+            key={post.title}
+            title={post.title}
+            date={post.publishedAt}
             slug={post.slug}
-            summary={post.frontMatter.summary}
+            summary={post.summary}
           />
         ))}
       </section>
@@ -41,14 +38,10 @@ export default function IndexPage({ postData }) {
 }
 
 export async function getStaticProps() {
-  const contentRoot = path.join(root, 'content')
-  const postData = fs.readdirSync(contentRoot).map((p) => {
-    const content = fs.readFileSync(path.join(contentRoot, p), 'utf8')
-    return {
-      slug: p.replace(/\.mdx/, ''),
-      content,
-      frontMatter: matter(content).data,
+  const postData = getSortedPostsData()
+  return {
+    props: {
+      postData
     }
-  })
-  return { props: { postData } }
+  }
 }
