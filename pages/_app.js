@@ -6,7 +6,7 @@ import '../styles/new-moon.css'
 
 import SEO from "../next-seo.config";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <Container>
       <DefaultSeo {...SEO} />
@@ -14,5 +14,3 @@ function MyApp({ Component, pageProps }) {
     </Container>
 )
 }
-
-export default MyApp
