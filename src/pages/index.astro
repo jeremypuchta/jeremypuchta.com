@@ -1,5 +1,10 @@
 ---
-
+import {
+	LinkedinIcon,
+	TwitterIcon,
+	MailIcon,
+	GithubIcon
+} from 'astro-feather';
 ---
 
 <html lang="en">
@@ -10,12 +15,20 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Jeremy Puchta | Software Engineer</title>
 	</head>
-	<body class="flex justify-center items-center max-w-screen-lg mx-auto">
-		<div class="flex flex-col justify-center min-h-screen">
-			<h1 class="font-bold text-5xl my-1">Jeremy Puchta</h1>
-			<p class="text-lg my-2">I'm a software engineer and consultant specialising in Java and Spring Boot.<br>
-				I help companies in building well designed, easy to maintain and fast software systems.
-			</p>
+	<body>
+		<div class="flex justify-center items-center max-w-screen-lg mx-auto">
+			<div class="flex flex-col justify-center min-h-screen">
+				<h1 class="font-bold text-5xl my-1">Jeremy Puchta</h1>
+				<p class="text-lg my-2">I'm a software engineer and consultant specialising in Java and Spring Boot.<br>
+					I help companies in building well designed, easy to maintain and fast software systems.
+				</p>
+				<div class="flex items-center my-2">
+					<a href="mailto:hello@jeremypuchta.com" class="mr-2"><MailIcon/></a>
+					<a href="https://www.linkedin.com/in/jeremypuchta/" class="mx-2"><LinkedinIcon /></a>
+					<a href="https://twitter.com/jeremypuchta" class="mx-2"><TwitterIcon /></a>
+					<a href="https://github.com/jeremypuchta" class="ml-2"><GithubIcon /></a>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
